@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date v:</strong>
+  <%= @date_value.date_v %>
+</p>
+
+<p>
+  <strong>Uf:</strong>
+  <%= @date_value.uf %>
+</p>
+
+<p>
+  <strong>Usd:</strong>
+  <%= @date_value.usd %>
+</p>
+
+<p>
+  <strong>Gold:</strong>
+  <%= @date_value.gold %>
+</p>
+
+<%= link_to 'Edit', edit_date_value_path(@date_value) %> |
+<%= link_to 'Back', date_values_path %>

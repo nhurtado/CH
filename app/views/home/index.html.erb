@@ -1,19 +1,31 @@
-<style type="text/css" media="screen">
-      body {
-        text-align:center;
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
+<head>
+<script>
+$(document).ready(function() {
+  var js = <%= raw @ufs %>;
+  new Morris.Line({
+	  // ID of the element in which to draw the chart.
+	  element: 'myfirstchart',
+	  // Chart data records -- each entry in this array corresponds to a point on
+	  // the chart.
+	  data: js,
+	  // The name of the data record attribute that contains x-values.
+	  xkey: 'date_v',
+	  // A list of names of data record attributes that contain y-values.
+	  ykeys: ['uf','gold','usd'],
+	  // Labels for the ykeys -- will be displayed when you hover over the
+	  // chart.
+	  labels: ['Valor UF','Valor gramo de Oro','Valor USD'],
+          lineColors:['green','blue', '#000000']
+	}).on('click', function(i, row){
+	  alert(js[i]['date_v']);
+	});
+});
+	
+</script>
+</head>
+<h1>asd</h1>
 
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
+<%= content_tag :div, "", id: "temp_data", data: {temp: @ufs} %>
 
-</style>
-<div id="annual"></div>
+<div id="myfirstchart" style="height: 400px; width:1200px;"></div>
+

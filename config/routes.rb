@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :date_values
+  resources :golds
+  resources :usds
+  resources :ufs
   resources :homes
   get 'home/index'
 

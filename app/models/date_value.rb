@@ -1,0 +1,2 @@
+class DateValue < ApplicationRecord
+end

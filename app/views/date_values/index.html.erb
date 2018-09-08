@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Date Values</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date v</th>
+      <th>Uf</th>
+      <th>Usd</th>
+      <th>Gold</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @date_values.each do |date_value| %>
+      <tr>
+        <td><%= date_value.date_v %></td>
+        <td><%= date_value.uf %></td>
+        <td><%= date_value.usd %></td>
+        <td><%= date_value.gold %></td>
+        <td><%= link_to 'Show', date_value %></td>
+        <td><%= link_to 'Edit', edit_date_value_path(date_value) %></td>
+        <td><%= link_to 'Destroy', date_value, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Date Value', new_date_value_path %>
