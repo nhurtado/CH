@@ -1,0 +1,27 @@
+<%= form_for(gold) do |f| %>
+  <% if gold.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gold.errors.count, "error") %> prohibited this gold from being saved:</h2>
+
+      <ul>
+      <% gold.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_v %>
+    <%= f.date_select :date_v %>
+  </div>
+
+  <div class="field">
+    <%= f.label :value %>
+    <%= f.text_field :value %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
